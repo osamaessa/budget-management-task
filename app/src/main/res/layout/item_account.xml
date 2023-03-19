@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.osama.budgetmanagement.presentation.accounts.AccountsViewModel" />
+
+        <variable
+            name="account"
+            type="com.osama.budgetmanagement.data.models.Account" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.onItemClick(account)}"
+        >
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_edit"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="parent"
+            android:ellipsize="end"
+            android:padding="10dp"
+            android:textColor="@color/main_color"
+            android:textSize="16sp"
+            android:text="@{account.name}"
+            tools:text="My Balance"
+            />
+
+        <TextView
+            android:id="@+id/textView_inDollar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="14sp"
+            android:padding="10dp"
+            amount="@{account.dollar}"
+            isDollar="@{true}"
+            app:layout_constraintTop_toBottomOf="@id/textView_title"
+            android:textColor="@color/main_color"
+            tools:text="Dollar: 20$"/>
+
+        <TextView
+            android:id="@+id/textView_inDinnar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            amount="@{account.dinnar}"
+            isDollar="@{false}"
+            app:layout_constraintTop_toBottomOf="@id/textView_inDollar"
+            android:textColor="@color/main_color"
+            tools:text="Dinnar: 20JOD"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_delete"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textView_title"
+            app:layout_constraintBottom_toBottomOf="@id/textView_title"
+            android:layout_marginEnd="10dp"
+            android:text="@string/delete"
+            android:onClick="@{() -> viewModel.deleteAccount(account)}"
+            android:textAllCaps="false"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_edit"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/button_delete"
+            app:layout_constraintTop_toTopOf="@id/textView_title"
+            app:layout_constraintBottom_toBottomOf="@id/textView_title"
+            android:onClick="@{() -> viewModel.editAccount(account)}"
+            android:text="@string/edit"
+            android:textAllCaps="false"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

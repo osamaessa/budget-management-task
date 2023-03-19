@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">إدارة الميزانية</string>
+    <string name="general_error">حدث خطأ ما</string>
+    <string name="account_saved_success">تم حفظ الحساب بنجاح</string>
+    <string name="transaction_saved_success">تم حفظ العملية بنجاح</string>
+    <string name="account_deleted_success">تم حذف الحساب بنجاح</string>
+    <string name="account_name_validation_message">الاسم فارغ، يرجى إدخال اسم الحساب</string>
+    <string name="transaction_description_validation_message">الوصف فارغ، يرجى إدخال وصف العملية</string>
+    <string name="transaction_amount_validation_message">المبلغ فارغ، يرجى إدخال المبلغ</string>
+    <string name="transaction_date_validation_message">التاريخ مطلوب، يرجى تحديد التاريخ</string>
+    <string name="transaction_type_validation_message">النوع مطلوب، يرجى تحديد النوع</string>
+    <string name="transaction_currency_validation_message">العملة مطلوبة، يرجى تحديد العملة</string>
+    <string name="accounts">الحسابات</string>
+    <string name="delete">حذف</string>
+    <string name="edit">تعديل</string>
+    <string name="save">حفظ</string>
+    <string name="enter_name">أدخل الاسم</string>
+    <string name="add">إضافة</string>
+    <string name="export">تصدير</string>
+    <string name="select_date">تحديد التاريخ</string>
+
+    <string name="dollar_value_formatted">الدولار: %s</string>
+    <string name="dinnar_value_formatted">الدينار: %s</string>
+    <string name="add_account">إضافة حساب</string>
+    <string name="edit_account">تعديل الحساب</string>
+    <string name="add_transaction">إضافة عملية</string>
+    <string name="edit_transaction">تعديل العملية</string>
+    <string name="description">الوصف</string>
+    <string name="amount">المبلغ</string>
+    <string name="dollar">الدولار</string>
+    <string name="dinnar">الدينار</string>
+    <string name="income">الإيرادات</string>
+    <string name="spend">المصروفات</string>
+    <string name="transactions">العمليات</string>
+    <string name="months">الشهور</string>
+    <string name="choose_date">اختيار التاريخ</string>
+</resources>

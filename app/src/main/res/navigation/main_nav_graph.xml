@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/accountsFragment">
+
+    <fragment
+        android:id="@+id/accountsFragment"
+        android:name="com.osama.budgetmanagement.presentation.accounts.AccountsFragment"
+        tools:layout="@layout/fragment_accounts" >
+        <action
+            android:id="@+id/action_accountsFragment_to_addAccountFragment"
+            app:destination="@id/addAccountFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_accountsFragment_to_transactionsFragment"
+            app:destination="@id/transactionsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/addAccountFragment"
+        android:name="com.osama.budgetmanagement.presentation.addaccount.AddAccountFragment"
+        tools:layout="@layout/fragment_add_account" >
+        <argument
+            android:name="account"
+            app:argType="com.osama.budgetmanagement.data.models.Account"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.osama.budgetmanagement.presentation.addtransaction.AddTransactionFragment"
+        tools:layout="@layout/fragment_add_transaction" >
+        <argument
+            android:name="accountId"
+            app:argType="integer" />
+        <argument
+            android:name="transaction"
+            app:argType="com.osama.budgetmanagement.data.models.Transaction"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionsFragment"
+        android:name="com.osama.budgetmanagement.presentation.transactions.TransactionsFragment"
+        android:label="TransactionsFragment" >
+        <argument
+            android:name="accountId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_transactionsFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+</navigation>
